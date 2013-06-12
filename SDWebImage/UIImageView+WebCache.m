@@ -59,7 +59,7 @@ static char operationKey;
             if (image)
             {
                 sself.image = image;
-                [sself setNeedsLayout];
+                [sself performSelectorOnMainThread:@selector(setNeedsLayout) withObject:nil waitUntilDone:NO];
             }
             if (completedBlock && finished)
             {
