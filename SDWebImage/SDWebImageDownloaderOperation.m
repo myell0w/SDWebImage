@@ -156,7 +156,7 @@
     {
         [self.connection cancel];
 
-        [[NSNotificationCenter defaultCenter] postNotificationName:SDWebImageDownloadStopNotification object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:SDWebImageDownloadStopNotification object:self];
 
         if (self.completedBlock)
         {
@@ -259,7 +259,7 @@
     CFRunLoopStop(CFRunLoopGetCurrent());
     self.connection = nil;
 
-    [[NSNotificationCenter defaultCenter] postNotificationName:SDWebImageDownloadStopNotification object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:SDWebImageDownloadStopNotification object:self];
 
     SDWebImageDownloaderCompletedBlock completionBlock = self.completedBlock;
 
@@ -304,7 +304,7 @@
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
     CFRunLoopStop(CFRunLoopGetCurrent());
-    [[NSNotificationCenter defaultCenter] postNotificationName:SDWebImageDownloadStopNotification object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:SDWebImageDownloadStopNotification object:self];
 
     if (self.completedBlock)
     {
