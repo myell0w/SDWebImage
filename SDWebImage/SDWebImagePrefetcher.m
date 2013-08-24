@@ -79,7 +79,7 @@
         }
         else if (self.finishedCount == self.requestedCount)
         {
-            [self reportStatus];
+            // [self reportStatus];
             if (self.completionBlock)
             {
                 self.completionBlock(self.finishedCount, self.skippedCount);
