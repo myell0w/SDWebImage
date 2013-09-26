@@ -24,6 +24,8 @@
  */
 @property (nonatomic, assign) SDWebImageOptions options;
 
+@property (readonly, nonatomic) SDWebImageManager *manager;
+
 
 /**
  * Return the global image prefetcher instance.
