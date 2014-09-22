@@ -43,8 +43,6 @@ typedef void(^SDWebImagePrefetcherCompletionBlock)(NSUInteger noOfFinishedUrls, 
  */
 @interface SDWebImagePrefetcher : NSObject
 
-@property (strong, nonatomic) SDWebImageManager *manager;
-
 /**
  *  The web image manager
  */
